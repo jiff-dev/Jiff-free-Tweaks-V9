@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-anim="full" data-accent="green">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jiff Tweaks</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%2307100b' stroke='%2300e676' stroke-width='5'/%3E%3Cpath d='M38 16v22a8 8 0 0 1-8 8 8 8 0 0 1-8-6' fill='none' stroke='%2300e676' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="jg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" style="stop-color:var(--accent)"/>
+      <stop offset="1" style="stop-color:var(--accent-2)"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div id="bg" aria-hidden="true">
+  <i class="orb o1"></i><i class="orb o2"></i><i class="orb o3"></i>
+  <div class="dots"></div>
+</div>
+
+<div id="splash" aria-hidden="true">
+  <div class="splash-inner">
+    <svg class="splash-logo" viewBox="0 0 64 64" fill="none">
+      <circle class="sl-ring" cx="32" cy="32" r="28" stroke="url(#jg)" stroke-width="3.5" stroke-linecap="round"/>
+      <path class="sl-j" d="M38 16v22a8 8 0 0 1-8 8 8 8 0 0 1-8-6" stroke="url(#jg)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="splash-word"><span>J</span><span>I</span><span>F</span><span>F</span><span class="gap"></span><span>T</span><span>W</span><span>E</span><span>A</span><span>K</span><span>S</span></div>
+    <div class="splash-bar"><i></i></div>
+  </div>
+</div>
+
+<div id="app">
+  <aside id="side">
+    <div class="brand">
+      <svg class="brand-logo" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <circle cx="32" cy="32" r="28" stroke="url(#jg)" stroke-width="4"/>
+        <path d="M38 16v22a8 8 0 0 1-8 8 8 8 0 0 1-8-6" stroke="url(#jg)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand-text"><b>Jiff Tweaks</b><span>V9 &middot; free</span></div>
+    </div>
+    <nav id="nav" aria-label="Sections"><i class="nav-pill"></i></nav>
+    <div class="side-foot">
+      <div id="adminChip" class="chip"></div>
+      <div class="foot-line"><span class="live-dot"></span><span id="connLabel">Connected</span></div>
+    </div>
+  </aside>
+
+  <main id="main">
+    <div id="banners"></div>
+    <header id="top">
+      <div>
+        <h1 id="pageTitle">Dashboard</h1>
+        <p id="pageSub"></p>
+      </div>
+      <div id="topRight"></div>
+    </header>
+    <div id="view" tabindex="-1"></div>
+  </main>
+</div>
+
+<div id="drawer" aria-hidden="true">
+  <div class="scrim"></div>
+  <section class="panel" role="dialog" aria-modal="true" aria-labelledby="dwTitle">
+    <header class="dw-head">
+      <div class="dw-ring">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="trk" cx="50" cy="50" r="44"/>
+          <circle id="dwArc" class="arc" cx="50" cy="50" r="44"/>
+        </svg>
+        <div class="dw-ring-mid"><b id="dwPct">0</b><small>%</small></div>
+        <div class="dw-check" id="dwCheck"></div>
+      </div>
+      <div class="dw-titles">
+        <div class="dw-kicker" id="dwKicker">Running</div>
+        <h2 id="dwTitle">Action</h2>
+        <p id="dwStep">Starting...</p>
+      </div>
+    </header>
+    <div class="dw-steps" id="dwSteps"></div>
+    <div class="dw-counts">
+      <div class="cnt ok"><b id="cOk">0</b><span>changed</span></div>
+      <div class="cnt skip"><b id="cSkip">0</b><span>skipped</span></div>
+      <div class="cnt fail"><b id="cFail">0</b><span>failed</span></div>
+      <div class="cnt time"><b id="cTime">0:00</b><span>elapsed</span></div>
+    </div>
+    <div class="term" id="term" role="log" aria-live="off"></div>
+    <div class="dw-summary" id="dwSummary"></div>
+    <footer class="dw-foot">
+      <button class="btn ghost" id="dwStop" type="button">Stop</button>
+      <button class="btn ghost" id="dwLog" type="button">Open full log</button>
+      <span class="grow"></span>
+      <button class="btn warn" id="dwReboot" type="button" hidden>Restart now</button>
+      <button class="btn primary" id="dwClose" type="button" hidden>Done</button>
+    </footer>
+  </section>
+</div>
+
+<div id="modalRoot"></div>
+<div id="toasts" aria-live="polite"></div>
+
+<script src="catalog.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
